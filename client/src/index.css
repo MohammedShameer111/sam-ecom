@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active hr{
+  display: block;
+}
+*{
+  font-family: Outfit;
+  background-color:rgb(245, 245, 239)
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+/* Magic Wand Animation */
+.magic-wand {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0px;
+  height: 3px;
+  background: linear-gradient(to right, #ffcc00, #ff6600, transparent);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Spark effect */
+.magic-wand::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 5px;
+  height: 5px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 0.6s infinite alternate ease-in-out;
+}
+
+.magic-wand::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 5px;
+  height: 5px;
+  background-color: #ff6600;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 0.6s infinite alternate-reverse ease-in-out;
+}
+
+.group:hover .magic-wand {
+  width: 50px;
+  left: 40%;
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+/* Repeated glowing effect */
+.magical-glow {
+  animation: glow 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 223, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 223, 0, 1);
+  }
+}
+
+/* Clicked magic effect */
+.magic-click {
+  animation: magicBurst 0.6s ease-in-out;
+}
+
+@keyframes magicBurst {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px yellow;
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px yellow;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px yellow;
+  }
+}
+
+
+@font-face {
+  font-family: 'HarryPotter';
+  src: url('assets/fonts/HARRYP__.TTF') format('truetype');
+
+  
+}
+
+
+
+.font-harryPotter {
+  font-family: 'HarryPotter', serif;
+}
+
+.magic-school {
+  font-family: 'HarryPotter', serif;
+}
+
+
+@media (max-width:640px){
+  a.active{
+    background-color: black;
+    color: white;
+  }
+}
